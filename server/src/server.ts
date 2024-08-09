@@ -8,7 +8,9 @@ import employeerRouter from './Routes/emp';
 
 const app: Express = express();
 
-config();
+config({ path: `.env.${process.env.NODE_ENV || 'development'}.local` });
+
+const port = process.env.PORT || 5000;
 app.use(bodyparser.json());
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -32,6 +34,6 @@ app.get('/', (req: Request, res: Response) => {
 app.use('/notification', notificationRouter);
 app.use('/company', employeerRouter);
 
-app.listen(5001, () => {
-  console.log(`Server is connected on 5001`);
+app.listen(port, () => {
+  console.log(`Server is connected on ${port}`);
 });
