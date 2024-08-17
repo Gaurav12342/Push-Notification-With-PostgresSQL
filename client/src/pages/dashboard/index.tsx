@@ -10,6 +10,7 @@ import {
   TableHead,
   TableRow,
   IconButton,
+  Pagination,
 } from '@mui/material';
 import DeleteIcon from '@mui/icons-material/Delete';
 import EditIcon from '@mui/icons-material/Edit';
@@ -84,6 +85,9 @@ const Dashboard = () => {
                   </TableCell>
                 </TableRow>
               ))}
+              <Stack sx={{ padding: '1rem', width: '100%' }} spacing={1}>
+                <Pagination count={10} variant="outlined" color="primary" />
+              </Stack>
             </TableBody>
           </Table>
         </TableContainer>
