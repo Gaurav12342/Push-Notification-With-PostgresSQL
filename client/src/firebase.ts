@@ -25,9 +25,7 @@ export const messaging = getMessaging(firebaseApp);
 
 export const onMessageListener = () =>
   new Promise((resolve) => {
-    console.log('Messaging data =>', messaging);
     onMessage(messaging, (payload) => {
-      console.log('payload =>', payload);
       resolve(payload);
     });
   });
