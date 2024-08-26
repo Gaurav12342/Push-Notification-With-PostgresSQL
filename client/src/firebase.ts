@@ -36,7 +36,7 @@ export const getFirebaseToken = () => {
       'BIgMMO4_kKfBKWqV-J-RwwHH5E6liZzWJ6bGKQBizKVQbw8pC3RB-dYWPwBks8zruuY04Ssxdg1RDLD3tc4F07w',
   })
     .then((cureToken) => {
-      console.log('cureToken12345 =>', cureToken);
+      console.log('cureToken =>', cureToken);
     })
     .catch((err) => {
       console.log('An error occurred while retrieving token. ', err);

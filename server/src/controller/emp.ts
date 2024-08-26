@@ -41,8 +41,7 @@ export const addEmployee = async function (req: Request, res: Response) {
             });
           }
 
-          let token =
-            'ezlFqAgLSYxiZPz4rDoRVF:APA91bFRhdI2kaYGOwXWsc3xBMxbyA-XMopaDl9Rq0b9YC8r0CWfpiaaWb6zpY38FKdshqDKbsqi5X9dz4WrJ_HLKFmVC_uN6ren_dVaFBrxu4ssGxwNoUdfos9apH5WCpRUfQeuJ0Kj'; // Replace with the actual FCM token
+          const token = req.headers.fcm_token ?? ""
           await sendNotif(token, 'Employee', `Employee added successfully.`);
 
           res.status(201).json({
