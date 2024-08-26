@@ -14,6 +14,8 @@ import {
 } from '@mui/material';
 import DeleteIcon from '@mui/icons-material/Delete';
 import EditIcon from '@mui/icons-material/Edit';
+import {useNavigate} from 'react-router-dom';
+import { routeConstant } from '../../routes/constant';
 
 function createData(
   name: string,
@@ -34,6 +36,10 @@ const rows = [
 ];
 
 const Dashboard = () => {
+  const navigate = useNavigate();
+  const handleAddEmp = ()=>{
+    navigate(routeConstant.employeeForm);
+  }
   return (
     <div>
       <Paper sx={{ mt: '1rem', minHeight: '80vh' }} elevation={3}>
@@ -46,7 +52,7 @@ const Dashboard = () => {
           <Typography variant="h5" gutterBottom>
             Employee List
           </Typography>
-          <Button variant="contained">Add Employee</Button>
+          <Button variant="contained" onClick={handleAddEmp}>Add Employee</Button>
         </Stack>
 
         <TableContainer component={Paper}>
